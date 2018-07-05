@@ -3,10 +3,7 @@ package back_vendas.Controller;
 import back_vendas.model.Produto;
 import back_vendas.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,7 +21,7 @@ public class ProdutoController {
         return produtoService.buscarTodos();
     }
     @PostMapping
-    public void salvar(Produto produto){
+    public void salvar(@RequestBody Produto produto){
         produtoService.salvar(produto);
     }
 }

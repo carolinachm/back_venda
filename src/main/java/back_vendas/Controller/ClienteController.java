@@ -4,9 +4,7 @@ import back_vendas.model.Cliente;
 import back_vendas.repository.ClienteRepository;
 import back_vendas.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,10 +17,11 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
     @GetMapping
-    public List<Cliente> buscaarTodos(){
+    public List<Cliente> buscarTodos(){
        return clienteService.buscarTodos();
     }
-    public void salvar(Cliente cliente){
+    @PostMapping
+    public void salvar(@RequestBody Cliente cliente){
         clienteService.salvar(cliente);
     }
 
