@@ -1,12 +1,13 @@
 package back_vendas.model;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * Created by Leonardo Candido on 04/07/2018.
@@ -14,11 +15,20 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_cliente")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@EqualsAndHashCode
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Cliente extends GenericModel {
+	
+	
 
-    private String nome;
+	private String nome;
     private String cpf;
+    private String telefone;
+    private String email;
+    private String endereco;
+    private int numero;
+    private String complemento;
+    private String bairro;
+    private String cep;
+    @ManyToOne
+    private Atendimento atendimento;
 }
