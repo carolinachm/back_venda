@@ -27,8 +27,6 @@ public class ClienteService {
     public void remover(Cliente cliente){
         clienteRepository.delete(cliente);
     }
-    public Cliente buscarPorId(Long id){
-        return clienteRepository.getOne(id);
-    }
+
 
 }
