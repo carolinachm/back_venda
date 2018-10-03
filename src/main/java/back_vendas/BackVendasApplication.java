@@ -14,6 +14,6 @@ public class BackVendasApplication {
 	}
 	@RequestMapping("/home")
 	public String index(){
-		return "home";
+		return "index";
 	}
 }
