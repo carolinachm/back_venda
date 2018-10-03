@@ -12,10 +12,10 @@ import lombok.Data;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tb_orcamento")
+@Table(name = "tb_perfil")
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Orcamento extends GenericModel{
+public class Perfil extends GenericModel{
 	
 	private BigDecimal valorDecimal;
 	private BigDecimal valorAcessorio;
@@ -26,6 +26,8 @@ public class Orcamento extends GenericModel{
 	@ManyToOne
 	private Atendimento atendimento;
 	@ManyToOne
-	private Usuario usuario;
+	private Cliente cliente;
+	@ManyToOne
+	private Acessorios acessorios;
 
 }

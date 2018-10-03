@@ -12,34 +12,35 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import back_vendas.model.Contato;
-import back_vendas.service.ContatoService;
+import back_vendas.model.Acessorios;
+import back_vendas.service.AcessoriosService;
+
+
 
 @RestController
-public class ContatoController {
+public class AcessoriosController {
 	
 	@Autowired
-	private ContatoService contatoService;
+	private AcessoriosService acessoriosService;
 	@CrossOrigin("*")
-	@GetMapping("/contatos")
-	public List<Contato> buscarTodos(){
-		return contatoService.list();
+	@GetMapping("/acessorios")
+	public List<Acessorios> buscarTodos(){
+		return acessoriosService.list();
 	}
 	@CrossOrigin("*")
-	@PostMapping("/contatos")
-	public void salvar(@RequestBody Contato contato){
-		contatoService.create(contato);
+	@PostMapping("/acessorios")
+	public void salvar(@RequestBody Acessorios acessorios){
+		acessoriosService.create(acessorios);
 	}
 	@CrossOrigin("*")
-	@PutMapping("/contatos")
-	public void alterar(@RequestBody Contato contato){
-		contatoService.create(contato);
+	@PutMapping("/acessorios")
+	public void alterar(@RequestBody Acessorios acessorios){
+		acessoriosService.create(acessorios);
 	}
 	@CrossOrigin("*")
-	@DeleteMapping("/contatos/{id}")
+	@DeleteMapping("/acessorios/{id}")
 	public void remover(@PathVariable(value = "id") long id){
-		contatoService.delete(id);
+		acessoriosService.delete(id);
 	}
-
 
 }

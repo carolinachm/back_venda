@@ -12,34 +12,33 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import back_vendas.model.Contato;
-import back_vendas.service.ContatoService;
+import back_vendas.model.Perfil;
+import back_vendas.service.PerfilService;
 
 @RestController
-public class ContatoController {
+public class PerfilController {
 	
 	@Autowired
-	private ContatoService contatoService;
+	private PerfilService perfilService;
 	@CrossOrigin("*")
-	@GetMapping("/contatos")
-	public List<Contato> buscarTodos(){
-		return contatoService.list();
+	@GetMapping("/perfis")
+	public List<Perfil> buscarTodos(){
+		return perfilService.list();
 	}
 	@CrossOrigin("*")
-	@PostMapping("/contatos")
-	public void salvar(@RequestBody Contato contato){
-		contatoService.create(contato);
+	@PostMapping("/perfis")
+	public void salvar(@RequestBody Perfil perfil){
+		perfilService.create(perfil);
 	}
 	@CrossOrigin("*")
-	@PutMapping("/contatos")
-	public void alterar(@RequestBody Contato contato){
-		contatoService.create(contato);
+	@PutMapping("/perfis")
+	public void alterar(@RequestBody Perfil perfil){
+		perfilService.create(perfil);
 	}
 	@CrossOrigin("*")
-	@DeleteMapping("/contatos/{id}")
+	@DeleteMapping("/perfis")
 	public void remover(@PathVariable(value = "id") long id){
-		contatoService.delete(id);
+		perfilService.delete(id);;
 	}
-
 
 }

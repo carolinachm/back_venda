@@ -6,5 +6,6 @@ import back_vendas.model.Atendimento;
 
 @Service
 public class AtendimentoService extends GenericService<Atendimento>{
+	
 
 }
