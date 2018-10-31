@@ -18,7 +18,6 @@ public class Usuario extends GenericModel{
 	private String senha;
 	private Boolean vendedor = false;
 	private Boolean ativo;
-	@ManyToOne
-	private Atendimento atendimento;
+	
 
 }

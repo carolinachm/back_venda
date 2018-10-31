@@ -26,8 +26,8 @@ public class Atendimento extends GenericModel {
 	private String email;
 	private Boolean status;
 	private String descricao;
-	@OneToMany(mappedBy = "atendimento", fetch = FetchType.LAZY)
-	private List<Usuario> usuarios;
+	@ManyToOne
+	private Usuario usuario;
 	@ManyToOne
 	private Revenda revenda;
 

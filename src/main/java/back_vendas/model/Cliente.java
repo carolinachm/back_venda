@@ -31,6 +31,6 @@ public class Cliente extends GenericModel {
     private String bairro;
     private String cep;
     @ManyToOne
-    private Atendimento atendimento;
+    private TipoVeiculo tipoVeiculo;
 
 }

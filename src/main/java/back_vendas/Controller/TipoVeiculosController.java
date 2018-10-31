@@ -12,36 +12,38 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import back_vendas.model.Cliente;
-import back_vendas.service.ClienteService;
+import back_vendas.model.Acessorios;
+import back_vendas.model.TipoVeiculo;
+import back_vendas.service.AcessoriosService;
 import back_vendas.service.TipoVeiculoService;
+
 
 
 @RestController
 @CrossOrigin("*")
-public class ClienteController {
+public class TipoVeiculosController {
 	
 	@Autowired
-	private ClienteService clienteService;
+	private TipoVeiculoService tipoVeiculoService;
 	
-	
-	@GetMapping("/clientes")
-	public List<Cliente> buscarTodos(){
-		return clienteService.list();
+	@GetMapping("/tipoveiculos")
+	public List<TipoVeiculo> buscarTodos(){
+		return tipoVeiculoService.list();
 	}
 	
-	@PostMapping("/clientes")
-	public void salvar(@RequestBody Cliente cliente){
-		clienteService.salvar(cliente);
+	@PostMapping("/tipoveiculos")
+	public void salvar(@RequestBody TipoVeiculo tipoVeiculo){
+		tipoVeiculoService.create(tipoVeiculo);
+	}
+
+	@PutMapping("/tipoveiculos")
+	public void alterar(@RequestBody TipoVeiculo tipoVeiculo){
+		tipoVeiculoService.create(tipoVeiculo);
 	}
 	
-	@PutMapping("/clientes")
-	public void alterar(@RequestBody Cliente cliente){
-		clienteService.create(cliente);
-	}
-	
-	@DeleteMapping("/clientes/{id}")
+	@DeleteMapping("/tipoveiculos/{id}")
 	public void remover(@PathVariable(value = "id") long id){
-		clienteService.delete(id);
+		tipoVeiculoService.delete(id);
 	}
+
 }
