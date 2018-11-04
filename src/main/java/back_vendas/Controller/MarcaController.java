@@ -12,34 +12,35 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import back_vendas.model.Perfil;
-import back_vendas.service.PerfilService;
+import back_vendas.model.Marca;
+import back_vendas.service.AcessoriosService;
+import back_vendas.service.MarcaService;
 
 @RestController
 @CrossOrigin("*")
-public class PerfilController {
+public class MarcaController {
 	
 	@Autowired
-	private PerfilService perfilService;
-
-	@GetMapping("/perfis")
-	public List<Perfil> buscarTodos(){
-		return perfilService.list();
+	private MarcaService marcaService;
+	
+	@GetMapping("/marcas")
+	public List<Marca> buscarTodos(){
+		return marcaService.list();
 	}
 	
-	@PostMapping("/perfis")
-	public void salvar(@RequestBody Perfil perfil){
-		perfilService.create(perfil);
+	@PostMapping("/marcas")
+	public void salvar(@RequestBody Marca marca){
+		marcaService.create(marca);
 	}
 	
-	@PutMapping("/perfis")
-	public void alterar(@RequestBody Perfil perfil){
-		perfilService.create(perfil);
+	@PutMapping("/marcas")
+	public void alterar(@RequestBody Marca marca){
+		marcaService.create(marca);
 	}
 	
-	@DeleteMapping("/perfis")
+	@DeleteMapping("/marcas/{id}")
 	public void remover(@PathVariable(value = "id") long id){
-		perfilService.delete(id);;
+		marcaService.delete(id);
 	}
 
 }

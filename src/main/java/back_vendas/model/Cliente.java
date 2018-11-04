@@ -32,5 +32,12 @@ public class Cliente extends GenericModel {
     private String cep;
     @ManyToOne
     private TipoVeiculo tipoVeiculo;
+    @ManyToOne
+    private Acessorios acessorios;
+    @ManyToOne
+    private Marca marca;
+    @ManyToOne
+    private Nacionalidade nacionalidade;
+    private String redeSocial;
 
 }
