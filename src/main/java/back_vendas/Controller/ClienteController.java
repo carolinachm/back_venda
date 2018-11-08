@@ -30,24 +30,25 @@ public class ClienteController {
 	@Autowired
 	private ClienteService clienteService;
 	
-	
+	@CrossOrigin("*")
 	@GetMapping("/clientes")
 	public List<Cliente> buscarTodos(){
 		return clienteService.list();
 	}
-	
+	@CrossOrigin("*")
 	@PostMapping("/clientes")
 	public void salvar(@RequestBody Cliente cliente){
 		clienteService.salvar(cliente);
 	}
-	
+	@CrossOrigin("*")
 	@PutMapping("/clientes")
 	public void alterar(@RequestBody Cliente cliente){
 		clienteService.create(cliente);
 	}
 	
 	@DeleteMapping("/clientes/{id}")
-	public void remover(@PathVariable(value = "id") long id){
+	@CrossOrigin("*")
+	public void remover(@PathVariable("id") long id){
 		clienteService.delete(id);
 	}
 }

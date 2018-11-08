@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "tb_perfil")
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Perfil extends GenericModel{
+public class Perfil extends GenericModel {
 	
 	@ManyToOne
 	private Atendimento atendimento;
@@ -21,5 +21,5 @@ public class Perfil extends GenericModel{
 	private Cliente cliente;
 	@ManyToOne
 	private Acessorios acessorios;
-
+	private String img;
 }

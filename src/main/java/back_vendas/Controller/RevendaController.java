@@ -32,7 +32,7 @@ public class RevendaController {
 		revendaService.create(revenda);
 	}
 	@DeleteMapping("/revenda/{id}")
-	public void remove(@PathVariable(value = "id") long id){
+	public void remove(@PathVariable("id") long id){
 		revendaService.delete(id);
 	}
 

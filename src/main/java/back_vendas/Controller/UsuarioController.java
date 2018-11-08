@@ -37,7 +37,7 @@ public class UsuarioController {
 	}
 	@CrossOrigin("*")
 	@DeleteMapping("/usuarios/{id}")
-	public void remover(@PathVariable(value = "id") long id){
+	public void remover(@PathVariable("id") long id){
 		usuarioService.delete(id);
 	}
 

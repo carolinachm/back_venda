@@ -39,7 +39,7 @@ public class AcessoriosController {
 	}
 	@CrossOrigin("*")
 	@DeleteMapping("/acessorios/{id}")
-	public void remover(@PathVariable(value = "id") long id){
+	public void remover(@PathVariable("id") long id){
 		acessoriosService.delete(id);
 	}
 

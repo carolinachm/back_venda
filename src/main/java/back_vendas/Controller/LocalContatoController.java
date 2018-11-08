@@ -34,7 +34,7 @@ public class LocalContatoController {
 		localContatoService.create(localContato);
 	}
 	@DeleteMapping("/local/{id}")
-	public void remover(@PathVariable(value = "id") long id){
+	public void remover(@PathVariable("id") long id){
 		localContatoService.delete(id);
 	}
 

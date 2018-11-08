@@ -16,7 +16,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Acessorios extends GenericModel{
 	
 	private String descricao;
-	private BigDecimal valor;
 	private Boolean status;
 
 }

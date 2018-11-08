@@ -6,5 +6,5 @@ import back_vendas.model.Perfil;
 
 @Service
 public class PerfilService  extends GenericService<Perfil>{
-
+	
 }

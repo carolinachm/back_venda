@@ -33,7 +33,7 @@ public class VeiculoController {
 		veiculoService.create(venda);
 	}
 	@DeleteMapping("/veiculos/{id}")
-	public void remover(@PathVariable(value = "id") long id){
+	public void remover(@PathVariable("id") long id){
 		veiculoService.delete(id);
 	}
 

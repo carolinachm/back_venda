@@ -34,7 +34,7 @@ public class ModeloController {
 		modeloService.create(modelo);
 	}
 	@DeleteMapping("/modelos/{id}")
-	public void remover(@PathVariable(value = "id") long id){
+	public void remover(@PathVariable("id") long id){
 		modeloService.delete(id);
 	}
 
