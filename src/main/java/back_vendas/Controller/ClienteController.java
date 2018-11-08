@@ -2,6 +2,8 @@ package back_vendas.Controller;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,8 +14,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import back_vendas.model.Acessorios;
 import back_vendas.model.Cliente;
+import back_vendas.service.AcessoriosService;
 import back_vendas.service.ClienteService;
+import back_vendas.service.MarcaService;
 import back_vendas.service.TipoVeiculoService;
 
 
@@ -21,6 +26,7 @@ import back_vendas.service.TipoVeiculoService;
 @CrossOrigin("*")
 public class ClienteController {
 	
+		
 	@Autowired
 	private ClienteService clienteService;
 	

@@ -17,31 +17,28 @@ import back_vendas.model.TipoVeiculo;
 import back_vendas.service.AcessoriosService;
 import back_vendas.service.TipoVeiculoService;
 
-
-
 @RestController
-@CrossOrigin("*")
 public class TipoVeiculosController {
 	
 	@Autowired
 	private TipoVeiculoService tipoVeiculoService;
-	
-	@GetMapping("/tipoveiculos")
+	@CrossOrigin("*")
+	@GetMapping("/tipoVeiculos")
 	public List<TipoVeiculo> buscarTodos(){
 		return tipoVeiculoService.list();
 	}
-	
-	@PostMapping("/tipoveiculos")
+	@CrossOrigin("*")
+	@PostMapping("/tipoVeiculos")
 	public void salvar(@RequestBody TipoVeiculo tipoVeiculo){
 		tipoVeiculoService.create(tipoVeiculo);
 	}
-
-	@PutMapping("/tipoveiculos")
+	@CrossOrigin("*")
+	@PutMapping("/tipoVeiculos")
 	public void alterar(@RequestBody TipoVeiculo tipoVeiculo){
 		tipoVeiculoService.create(tipoVeiculo);
 	}
-	
-	@DeleteMapping("/tipoveiculos/{id}")
+	@CrossOrigin("*")
+	@DeleteMapping("/tipoVeiculos/{id}")
 	public void remover(@PathVariable(value = "id") long id){
 		tipoVeiculoService.delete(id);
 	}
