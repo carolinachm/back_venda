@@ -5,24 +5,26 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tb_veiculo")
+@Table(name="tb_produto")
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Veiculo extends GenericModel {
-	
+@EqualsAndHashCode
+public class Produto extends GenericModel{
 	
 	private String marca;
+	private int potencia;
 	private String desempenho;
 	private String tipoCor;
 	private int capacidade;
-	private int potencia;
 	private String placa;
 	private String modelo;
 	private String categoria;
-	private String imgVeiculo;
-
+	@ManyToOne
+	private Vendedor vendedor;
+	
 }
