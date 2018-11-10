@@ -15,8 +15,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Veiculo extends GenericModel {
 	
 	
-	@ManyToOne
-	private Modelo modelo;
+	private String marca;
+	private String desempenho;
+	private String tipoCor;
+	private int capacidade;
+	private int potencia;
+	private String placa;
+	private String modelo;
+	private String categoria;
 	private String imgVeiculo;
 
 }

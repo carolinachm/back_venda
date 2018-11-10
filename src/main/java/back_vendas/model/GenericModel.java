@@ -19,7 +19,7 @@ import java.io.Serializable;
 @MappedSuperclass
 public class GenericModel implements Serializable{
 	@Id  
-    @GeneratedValue(strategy = GenerationType.AUTO)  
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
     @Basic(optional = false)  
     @Column(name = "id", nullable = false, columnDefinition = "BIGINT")  
     private long id;

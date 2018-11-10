@@ -23,5 +23,8 @@ public class ClienteService extends GenericService<Cliente> {
 	public Cliente salvar(@RequestBody Cliente cliente){
     	return clienteRepository.saveAndFlush(cliente);
     }
+	public Cliente buscarClientePorCPF(String cpf){
+		return clienteRepository.buscarClientePorCPF(cpf);
+	}
 
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import back_vendas.model.Acessorios;
@@ -34,6 +35,11 @@ public class ClienteController {
 	@GetMapping("/clientes")
 	public List<Cliente> buscarTodos(){
 		return clienteService.list();
+	}
+	@CrossOrigin("*")
+	@GetMapping("/clientes/{cpf}")
+	public void buscarClientePorCPF(@PathVariable("cpf") String cpf){
+		clienteService.buscarClientePorCPF(cpf);
 	}
 	@CrossOrigin("*")
 	@PostMapping("/clientes")

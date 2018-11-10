@@ -15,11 +15,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Perfil extends GenericModel {
 	
-	@ManyToOne
-	private Atendimento atendimento;
+	
 	@ManyToOne
 	private Cliente cliente;
-	@ManyToOne
-	private Acessorios acessorios;
-	private String img;
+	
 }
