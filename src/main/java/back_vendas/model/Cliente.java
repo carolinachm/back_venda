@@ -30,5 +30,7 @@ public class Cliente extends GenericModel {
     private String bairro;
     private String cep;
     private String redeSocial;
+    @ManyToOne
+    private Produto produto;
 
 }

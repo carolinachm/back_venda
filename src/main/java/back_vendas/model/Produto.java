@@ -1,6 +1,7 @@
 package back_vendas.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -24,6 +25,8 @@ public class Produto extends GenericModel{
 	private String placa;
 	private String modelo;
 	private String categoria;
+	@Lob
+	private byte[] imagem;
 	@ManyToOne
 	private Vendedor vendedor;
 	
