@@ -59,10 +59,10 @@
 		</dependency>
 
 		<dependency>
-            <groupId>org.jfree</groupId>
-            <artifactId>jfreechart</artifactId>
-            <version>1.5.0</version>
-        </dependency>
+			<groupId>org.jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>1.5.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -75,8 +75,20 @@
 			<artifactId>h2</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- JasperReports -->
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.1.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>eclipse</groupId>
+					<artifactId>jdtcore</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 
-		
+
 
 	</dependencies>
 

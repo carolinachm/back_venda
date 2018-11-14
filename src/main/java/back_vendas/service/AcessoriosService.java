@@ -6,5 +6,5 @@ import back_vendas.model.Acessorios;
 
 @Service
 public class AcessoriosService extends GenericService<Acessorios> {
-
+	
 }

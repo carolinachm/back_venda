@@ -17,27 +17,27 @@ import back_vendas.service.AcessoriosService;
 import back_vendas.service.MarcaService;
 
 @RestController
-@CrossOrigin("*")
+
 public class MarcaController {
 	
 	@Autowired
 	private MarcaService marcaService;
-	
+	@CrossOrigin("*")
 	@GetMapping("/marcas")
 	public List<Marca> buscarTodos(){
 		return marcaService.list();
 	}
-	
+	@CrossOrigin("*")
 	@PostMapping("/marcas")
 	public void salvar(@RequestBody Marca marca){
 		marcaService.create(marca);
 	}
-	
+	@CrossOrigin("*")
 	@PutMapping("/marcas")
 	public void alterar(@RequestBody Marca marca){
 		marcaService.create(marca);
 	}
-	
+	@CrossOrigin("*")
 	@DeleteMapping("/marcas/{id}")
 	public void remover(@PathVariable("id") long id){
 		marcaService.delete(id);

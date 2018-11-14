@@ -20,5 +20,7 @@ public class Perfil extends GenericModel {
 	private Cliente cliente;
 	@ManyToOne
 	private Produto produto;
+	@ManyToOne
+	private Atendimento atendimento;
 	
 }
