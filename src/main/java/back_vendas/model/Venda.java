@@ -1,5 +1,8 @@
 package back_vendas.model;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -9,15 +12,18 @@ import lombok.Data;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tb_modelo")
+@Table(name="tb_venda")
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Modelo extends GenericModel{
+public class Venda extends GenericModel{
 	
-	private String descricao;
-	private char inativo;
+	private BigDecimal valorVenda;
 	@ManyToOne
-	private Acessorios acessorios;
-	
+	private Vendedor vendedor;
+	@ManyToOne
+	private Cliente cliente;
+	private Date dataVenda;
+	@ManyToOne
+	private Produto produto;
 
 }

@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import back_vendas.model.Marca;
-import back_vendas.service.AcessoriosService;
 import back_vendas.service.MarcaService;
 
 @RestController

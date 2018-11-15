@@ -12,33 +12,37 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import back_vendas.model.Usuario;
-import back_vendas.service.UsuarioService;
+import back_vendas.model.Venda;
+import back_vendas.service.VendaService;
 
 @RestController
-public class UsuarioController {
+@CrossOrigin("*")
+public class VendaController {
 	
 	@Autowired
-	private UsuarioService usuarioService;
+	private VendaService vendaService;
+	
 	@CrossOrigin("*")
-	@GetMapping("/usuarios")
-	public List<Usuario> buscarTodos(){
-		return usuarioService.list();
+	@GetMapping("/vendas")
+	public List<Venda> buscarTodos(){
+		return vendaService.list();
+	}
+	
+	@CrossOrigin("*")
+	@PostMapping("/vendas")
+	public void salvar(@RequestBody Venda venda){
+		vendaService.create(venda);
 	}
 	@CrossOrigin("*")
-	@PostMapping("/usuarios")
-	public void salvar(@RequestBody Usuario usuario){
-		usuarioService.create(usuario);
+	@PutMapping("/vendas")
+	public void alterar(@RequestBody Venda venda){
+		vendaService.create(venda);
 	}
+	
+	@DeleteMapping("/vendas/{id}")
 	@CrossOrigin("*")
-	@PutMapping("/usuarios")
-	public void alterar(@RequestBody Usuario usuario){
-		usuarioService.create(usuario);
-	}
-	@CrossOrigin("*")
-	@DeleteMapping("/usuarios/{id}")
 	public void remover(@PathVariable("id") long id){
-		usuarioService.delete(id);
+		vendaService.delete(id);
 	}
 
 }

@@ -19,16 +19,15 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Atendimento extends GenericModel {
 	
-	private Date dataAbertura = new Date();
-	private Date dataEncerramento = new Date();
-	private String nome;
-	private String telefone;
-	private String email;
-	private Boolean status;
+	@ManyToOne
+	private Produto produto;
+	@ManyToOne
+	private Vendedor vendedor;
+	@ManyToOne
+	private Cliente cliente;
+	@ManyToOne
+	private Perfil perfil;
 	private String descricao;
-	@ManyToOne
-	private Usuario usuario;
-	@ManyToOne
-	private Revenda revenda;
-
+	private Boolean situacao;
+	
 }

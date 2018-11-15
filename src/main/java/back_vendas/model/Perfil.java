@@ -16,11 +16,17 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Perfil extends GenericModel {
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@ManyToOne
 	private Cliente cliente;
 	@ManyToOne
 	private Produto produto;
 	@ManyToOne
 	private Atendimento atendimento;
+	@ManyToOne
+	private Venda venda;
 	
 }

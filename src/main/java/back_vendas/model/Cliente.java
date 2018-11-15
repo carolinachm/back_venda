@@ -17,9 +17,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name="tb_cliente")
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@EqualsAndHashCode
 public class Cliente extends GenericModel {
 		
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nome;
     private String cpf;
     private String telefone;
@@ -29,6 +32,7 @@ public class Cliente extends GenericModel {
     private String complemento;
     private String bairro;
     private String cep;
+    private String sexo;
     private String redeSocial;
     @ManyToOne
     private Produto produto;

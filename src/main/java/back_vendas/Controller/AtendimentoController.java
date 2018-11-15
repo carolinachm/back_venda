@@ -18,30 +18,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import back_vendas.model.Atendimento;
-import back_vendas.model.Usuario;
 import back_vendas.service.AtendimentoService;
-import back_vendas.service.UsuarioService;
 
 @RestController
 public class AtendimentoController {
-	
-	@Getter@Setter
-	private Atendimento atendimento = new Atendimento();
-	@Getter@Setter
-	private List<Atendimento> atendimentos;
-	@Getter@Setter
-	private List<Usuario> usuarios;
 	@Autowired
 	private AtendimentoService atendimentoService;
-	@Autowired
-	private UsuarioService usuarioService;
 	
-	
-	@PostConstruct
-	public void init(){
-		atendimentos = atendimentoService.list();
-		usuarios = usuarioService.list();
-	}
 	@CrossOrigin("*")
 	@GetMapping("/atendimentos")
 	public List<Atendimento> buscarTodos(){
